@@ -1,14 +1,14 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-const WelcomeScreen = () => {
+const AddTodo = () => {
   return (
     <View>
-      <Text>WelcomeScreen</Text>
+      <Text>AddTodo</Text>
     </View>
   );
 };
 
-export default WelcomeScreen;
+export default AddTodo;
 
 const styles = StyleSheet.create({});

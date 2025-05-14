@@ -1,18 +1,20 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {NavigationContainer} from '@react-navigation/native';
-import HomeScreen from './src/screens/HomeScreen';
-import WelcomeScreen from './src/screens/WelcomeScreen';
 
-const Stack = createNativeStackNavigator();
+import AppNavigation from './src/Navigation/AppNavigation';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {Provider} from 'react-redux';
+import {store} from './src/redux/store/store';
+import {ThemeProvider} from './src/redux/slice/ThemeContext';
+
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Welcome" component={WelcomeScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <ThemeProvider>
+        <GestureHandlerRootView style={{flex: 1}}>
+          <AppNavigation />
+        </GestureHandlerRootView>
+      </ThemeProvider>
+    </Provider>
   );
 };
 
